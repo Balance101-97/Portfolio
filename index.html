@@ -102,6 +102,9 @@ section[id] {
 }
 .nav-download:hover { background: var(--gold); color: white; }
 
+a.nav-download { text-decoration: none; display: inline-block; }
+.contact-grid.single { grid-template-columns: 1fr; max-width: 640px; }
+
 /* ── Hero ──────────────────────────────────────────────────── */
 #hero {
   min-height: 100vh;
@@ -323,7 +326,7 @@ section[id] {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -561,7 +564,7 @@ footer {
       <li><a href="#educacao">Educação</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <button class="nav-download" onclick="downloadCV()">⤓ Download CV</button>
+    <a class="nav-download" href="cv.pdf" download="CV_Goncalo_Silva.pdf">⤓ Download CV</a>
   </nav>
 
   <!-- ── Hero ──────────────────────────────────────────────────── -->
@@ -706,8 +709,39 @@ footer {
   </div>
 
   <section id="projetos">
-    <div id="projects-loading">A carregar projetos...</div>
-    <div class="projects-grid" id="projects-grid" style="display:none;"></div>
+    <div class="projects-grid" id="projects-grid">
+      <div class="project-card" style="animation-delay: 0s">
+        <p class="project-year">2026</p>
+        <h3 class="project-title">Tickets API — Backend de Gestão de Incidentes</h3>
+        <p class="project-desc">Backend em Node.js e Express para listar, filtrar, criar, atualizar e apagar tickets de
+          incidentes, com paginação, ordenação, estatísticas e notificações por webhook para sistemas externos (servidor
+          recetor separado). Arquitetura em camadas, base de dados SQLite e importação de dados a partir de CSV. Inclui
+          testes unitários e workflows de GitHub Actions.</p>
+        <div class="project-techs">
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">Express</span>
+          <span class="tech-badge">SQLite</span>
+          <span class="tech-badge">REST API</span>
+          <span class="tech-badge">Webhooks</span>
+          <span class="tech-badge">GitHub Actions</span>
+        </div>
+        <a href="https://github.com/Balance101-97/Tickets_Project_M8-M13" class="project-link" target="_blank" rel="noopener">Ver no GitHub →</a>
+      </div>
+
+      <div class="project-card" style="animation-delay: 0.1s">
+        <p class="project-year">2026</p>
+        <h3 class="project-title">Gestor de Tickets — Front End</h3>
+        <p class="project-desc">Interface web de um gestor de tickets, desenvolvida no curso Upskill (ServiceNow). O
+          repositório inclui o cliente, o servidor principal e o recetor de webhooks do sistema de tickets.</p>
+        <div class="project-techs">
+          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">Express</span>
+          <span class="tech-badge">REST API</span>
+        </div>
+        <a href="https://github.com/Balance101-97/Projeto-M10-FrontEnd" class="project-link" target="_blank" rel="noopener">Ver no GitHub →</a>
+      </div>
+    </div>
   </section>
 
   <!-- ── Education ─────────────────────────────────────────────── -->
@@ -782,7 +816,7 @@ footer {
 
   <!-- ── Contact ────────────────────────────────────────────────── -->
   <section id="contacto">
-    <div class="contact-grid">
+    <div class="contact-grid single">
       <div class="contact-intro">
         <h2>Vamos <em>trabalhar</em> juntos?</h2>
         <p>Estou a trabalhar como consultor ServiceNow, mas gosto sempre de falar sobre projetos, ideias e tecnologia.</p>
@@ -806,30 +840,13 @@ footer {
         </div>
       </div>
 
-      <form class="contact-form" onsubmit="sendContact(event)">
-        <div class="form-group">
-          <label for="name">Nome</label>
-          <input type="text" id="name" name="name" placeholder="O teu nome" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="email@exemplo.com" required />
-        </div>
-        <div class="form-group">
-          <label for="message">Mensagem</label>
-          <textarea id="message" name="message" rows="5" placeholder="Descreve o teu projecto ou oportunidade..."
-            required></textarea>
-        </div>
-        <div class="form-msg" id="form-msg"></div>
-        <button type="submit" class="btn-send" id="btn-send">Enviar Mensagem →</button>
-      </form>
     </div>
   </section>
 
   <!-- ── Footer ────────────────────────────────────────────────── -->
   <footer>
     <span>© 2026 Gonçalo da Cruz Silva</span>
-    <span>Desenvolvido com FastAPI + HTML/CSS/JS</span>
+    <span>Desenvolvido com HTML/CSS/JS</span>
     <span>Mafra, Lisboa, Portugal</span>
   </footer>
 
@@ -845,95 +862,6 @@ footer {
     }, { threshold: 0.15 });
 
     document.querySelectorAll('.experience-item').forEach(el => observer.observe(el));
-
-    // ── Carregar Projetos da API ──────────────────────────────────
-    async function loadProjects() {
-      try {
-        const res = await fetch('/api/projects');
-        const projects = await res.json();
-
-        const grid = document.getElementById('projects-grid');
-        const loading = document.getElementById('projects-loading');
-
-        grid.innerHTML = projects.map((p, i) => `
-          <div class="project-card" style="animation-delay: ${i * 0.1}s">
-            <p class="project-year">${p.year}</p>
-            <h3 class="project-title">${p.title}</h3>
-            <p class="project-desc">${p.description}</p>
-            <div class="project-techs">
-              ${p.technologies.map(t => `<span class="tech-badge">${t}</span>`).join('')}
-            </div>
-            <a href="${p.link}" class="project-link" target="_blank">Ver Projeto →</a>
-          </div>
-        `).join('');
-
-        loading.style.display = 'none';
-        grid.style.display = 'grid';
-      } catch (err) {
-        document.getElementById('projects-loading').textContent = 'Erro ao carregar projetos.';
-      }
-    }
-
-    // ── Formulário de Contacto ────────────────────────────────────
-    async function sendContact(e) {
-      e.preventDefault();
-      const btn = document.getElementById('btn-send');
-      const msg = document.getElementById('form-msg');
-      btn.disabled = true;
-      btn.textContent = 'A enviar...';
-      msg.className = 'form-msg';
-      msg.style.display = 'none';
-
-      try {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-          })
-        });
-        const data = await res.json();
-
-        if (res.ok && data.success) {
-          msg.textContent = '✓ ' + data.message;
-          msg.className = 'form-msg success';
-          e.target.reset();
-        } else {
-          throw new Error(data.detail || 'Erro desconhecido');
-        }
-      } catch (err) {
-        msg.textContent = '✗ Erro ao enviar. Tenta novamente ou contacta diretamente por email.';
-        msg.className = 'form-msg error';
-      } finally {
-        btn.disabled = false;
-        btn.textContent = 'Enviar Mensagem →';
-      }
-    }
-
-    // ── Download CV ───────────────────────────────────────────────
-    async function downloadCV() {
-      try {
-        const res = await fetch('/api/download-cv');
-        if (!res.ok) {
-          alert('PDF não disponível. Coloca o teu CV em static/cv.pdf');
-          return;
-        }
-        const blob = await res.blob();
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'CV_Goncalo_Silva.pdf';
-        a.click();
-        URL.revokeObjectURL(url);
-      } catch (err) {
-        alert('Erro ao fazer download do CV.');
-      }
-    }
-
-    // ── Init ──────────────────────────────────────────────────────
-    loadProjects();
   </script>
 </body>
 
