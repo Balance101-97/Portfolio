@@ -1,430 +1,403 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Gonçalo Silva — Técnico de Informática · ServiceNow CSA</title>
-<meta name="description" content="Currículo de Gonçalo da Cruz Silva — biólogo reconvertido em informática, assistente de gerente McDonald's Portugal, Upskill concluído, ServiceNow CSA certificado." />
-<meta property="og:title" content="Gonçalo Silva — Técnico de Informática · ServiceNow CSA" />
-<meta property="og:description" content="Biólogo reconvertido em IT. Gestão de equipas na McDonald's, Upskill concluído, ServiceNow CSA certificado." />
-<meta property="og:type" content="profile" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-<style>
-:root{
-  --paper:#FAF8F4;
-  --paper-2:#F2EEE6;
-  --ink:#141B22;
-  --petrol:#0E3A47;
-  --petrol-soft:#1B5263;
-  --sage:#5C8374;
-  --amber:#C6781E;
-  --muted:#5E6670;
-  --line:#E3DDD1;
-  --line-soft:#EDE8DE;
-  --serif:'Fraunces', Georgia, serif;
-  --sans:'Hanken Grotesk', system-ui, sans-serif;
-  --mono:'JetBrains Mono', ui-monospace, monospace;
-  --maxw:1080px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit}
-::selection{background:var(--amber);color:#fff}
-
-/* ── Top bar ── */
-.topbar{position:sticky;top:0;z-index:50;background:rgba(250,248,244,.82);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line-soft)}
-.topbar-inner{max-width:var(--maxw);margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--petrol);font-weight:500}
-.brand .dot{color:var(--amber)}
-.topnav{display:flex;gap:26px}
-.topnav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
-.topnav a:hover{color:var(--ink)}
-
-/* ── Layout ── */
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-section{padding:64px 0;border-top:1px solid var(--line-soft)}
-section:first-of-type{border-top:none}
-.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.eyebrow::before{content:"";width:26px;height:1px;background:var(--amber);display:inline-block}
-.h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:8px}
-
-/* ── Hero ── */
-.hero{padding:74px 0 60px}
-.hero-grid{display:grid;grid-template-columns:1.25fr .85fr;gap:54px;align-items:start}
-.hero-tag{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--petrol);margin-bottom:22px}
-.hero-name{font-family:var(--serif);font-weight:400;font-size:clamp(3.2rem,8vw,5.6rem);line-height:.94;letter-spacing:-.02em;margin-bottom:4px}
-.hero-name em{font-style:italic;color:var(--petrol)}
-.name-rule{width:72px;height:3px;background:var(--amber);margin:20px 0 24px;border-radius:2px}
-.hero-lead{font-size:1.12rem;color:var(--ink);max-width:38ch;margin-bottom:30px;font-weight:400}
-.hero-lead strong{font-weight:600;color:var(--petrol)}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-decoration:none;padding:13px 20px;border-radius:8px;transition:transform .15s, box-shadow .2s, background .2s, color .2s;border:1px solid transparent}
-.btn svg{width:15px;height:15px}
-.btn-solid{background:var(--petrol);color:#fff}
-.btn-solid:hover{background:var(--petrol-soft);transform:translateY(-2px);box-shadow:0 8px 20px -10px rgba(14,58,71,.6)}
-.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-.btn-ghost:hover{border-color:var(--petrol);color:var(--petrol);transform:translateY(-2px)}
-
-/* ── Record card (signature) ── */
-.record{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 48px -32px rgba(20,27,34,.35);overflow:hidden}
-.record-head{display:flex;align-items:center;gap:9px;padding:13px 18px;border-bottom:1px solid var(--line-soft);background:var(--paper-2)}
-.record-head .ico{width:26px;height:26px;border-radius:6px;background:var(--petrol);color:#fff;display:grid;place-items:center;font-family:var(--mono);font-size:.72rem;font-weight:500}
-.record-head .label{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.record-body{padding:6px 18px 16px}
-.field{display:grid;grid-template-columns:96px 1fr;gap:10px;padding:11px 0;border-bottom:1px solid var(--line-soft);align-items:center}
-.field:last-child{border-bottom:none}
-.field .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.field .v{font-size:.92rem;font-weight:500}
-.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;padding:5px 11px;border-radius:999px;border:1px solid}
-.pill .led{width:7px;height:7px;border-radius:999px}
-.pill.green{color:#1c5e45;background:#e9f4ee;border-color:#c5e3d3}
-.pill.green .led{background:#1c8d5e}
-.pill.amber{color:#8a5410;background:#fbf0e1;border-color:#f0d8b6}
-.pill.amber .led{background:var(--amber)}
-.pill.petrol{color:var(--petrol);background:#e7f0f2;border-color:#c4dbe0}
-.pill.petrol .led{background:var(--petrol)}
-
-/* ── Perfil ── */
-.about p{font-size:1.06rem;max-width:60ch;color:#283038}
-.about p+p{margin-top:16px}
-
-/* ── Cert card ── */
-.cert-card{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 26px;box-shadow:0 18px 40px -34px rgba(20,27,34,.4)}
-.cert-badge{width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,var(--petrol),var(--petrol-soft));color:#fff;display:grid;place-items:center;font-family:var(--mono);font-weight:500;font-size:.8rem;line-height:1.1;text-align:center}
-.cert-title{font-family:var(--serif);font-size:1.45rem;font-weight:500;line-height:1.1}
-.cert-meta{font-family:var(--mono);font-size:.74rem;color:var(--muted);letter-spacing:.04em;margin-top:6px}
-
-/* ── Timeline ── */
-.timeline{position:relative;margin-top:8px}
-.timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--line)}
-.tl-item{position:relative;padding:0 0 30px 38px}
-.tl-item:last-child{padding-bottom:0}
-.tl-item::before{content:"";position:absolute;left:0;top:5px;width:16px;height:16px;border-radius:999px;background:#fff;border:3px solid var(--sage)}
-.tl-item.cur::before{border-color:var(--amber);background:#fff}
-.tl-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:3px}
-.tl-role{font-size:1.12rem;font-weight:600}
-.tl-org{color:var(--petrol);font-weight:500}
-.tl-when{font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:.04em;margin-left:auto}
-.tl-desc{color:#384049;max-width:62ch;font-size:.98rem}
-.tl-desc ul{margin:8px 0 0;padding-left:18px}
-.tl-desc li{margin:4px 0}
-.tl-link{display:inline-flex;align-items:center;gap:7px;margin-top:10px;font-family:var(--mono);font-size:.76rem;color:var(--petrol);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s,color .2s}
-.tl-link:hover{color:var(--amber);border-color:var(--amber)}
-.tl-link svg{width:14px;height:14px}
-
-/* ── Skills ── */
-.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.skill-col h3{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.tags{display:flex;flex-wrap:wrap;gap:8px}
-.tag{font-size:.86rem;padding:6px 13px;border-radius:8px;background:#fff;border:1px solid var(--line);color:#2b333b}
-
-/* ── Contact ── */
-.contact-grid{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
-.contact-card{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 18px;text-decoration:none;min-width:230px;flex:1;transition:transform .15s,border-color .2s}
-.contact-card:hover{transform:translateY(-2px);border-color:var(--petrol)}
-.contact-card .ci{width:38px;height:38px;border-radius:9px;background:var(--paper-2);display:grid;place-items:center;color:var(--petrol);flex:none}
-.contact-card .ci svg{width:18px;height:18px}
-.contact-card .ck{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.contact-card .cv2{font-weight:500;font-size:.92rem;word-break:break-all}
-footer{border-top:1px solid var(--line-soft);padding:34px 0 50px;font-family:var(--mono);font-size:.74rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:none}
-
-@media(max-width:820px){
-  .hero-grid{grid-template-columns:1fr;gap:38px}
-  .topnav{display:none}
-  .field{grid-template-columns:88px 1fr}
-  .cert-card{grid-template-columns:auto 1fr;gap:18px}
-  .cert-card .pill{grid-column:1 / -1;justify-self:start}
-  .tl-when{margin-left:0;width:100%}
-}
-@media(prefers-reduced-motion:reduce){
-  *{scroll-behavior:auto!important}
-  .reveal{opacity:1;transform:none;transition:none}
-  .btn:hover,.contact-card:hover{transform:none}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gonçalo Silva — Curriculum Vitae</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
 
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">Gonçalo Silva<span class="dot"> ·</span> CV</div>
-    <nav class="topnav" aria-label="Secções">
-      <a href="#perfil">Perfil</a>
-      <a href="#certificacao">Certificação</a>
-      <a href="#experiencia">Experiência</a>
-      <a href="#formacao">Formação</a>
-      <a href="#competencias">Competências</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </div>
-</header>
+  <!-- ── Navigation ────────────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-logo">Gonçalo <span>Silva</span></div>
+    <ul class="nav-links">
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#educacao">Educação</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-download" onclick="downloadCV()">⤓ Download CV</button>
+  </nav>
 
-<!-- HERO -->
-<div class="wrap hero">
-  <div class="hero-grid">
-    <div>
-      <p class="hero-tag">Técnico de Informática · Mafra, Lisboa · Portugal</p>
+  <!-- ── Hero ──────────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-left">
+      <p class="hero-tag">// Consultor ServiceNow · Mafra, Lisboa, Portugal</p>
       <h1 class="hero-name">Gonçalo<br /><em>Silva</em></h1>
-      <div class="name-rule"></div>
-      <p class="hero-lead">
-        Biólogo de formação, <strong>reconvertido para a informática</strong>.
-        Gestão de equipas e operações na McDonald's Portugal, Upskill concluído
-        e certificação <strong>ServiceNow CSA</strong>.
+      <p class="hero-role">Consultor ServiceNow & Certified System Administrator</p>
+      <p class="hero-bio">
+        Desde junho de 2026 estou na Axians, num projeto de cliente do setor industrial,
+        onde trabalho com ITSM, CMDB, Service Catalog e Virtual Agent. Gosto de perceber bem
+        o que o cliente precisa antes de configurar, e de deixar tudo documentado e testado.
+        Antes de TI passei mais de cinco anos a coordenar equipas e operações num ambiente
+        de muito volume, o que me deu calma sob pressão e facilidade em trabalhar com pessoas.
       </p>
-      <div class="actions">
-        <a class="btn btn-solid" href="cv-goncalo-silva.pdf" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Descarregar CV (PDF)
-        </a>
-        <a class="btn btn-ghost" href="https://github.com/Balance101-97/Tickets_Project_M8-M13" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-          Projeto Upskill no GitHub
-        </a>
+      <div class="hero-actions">
+        <button class="btn-primary"
+          onclick="document.getElementById('projetos').scrollIntoView({behavior:'smooth'})">Ver Projetos</button>
+        <a href="#contacto" class="btn-ghost">Contactar</a>
       </div>
     </div>
 
-    <aside class="record reveal" aria-label="Resumo do perfil">
-      <div class="record-head">
-        <span class="ico">GS</span>
-        <span class="label">Registo de perfil</span>
+    <div class="hero-right">
+      <div class="info-grid">
+        <div class="info-item">
+          <label>Localização</label>
+          <span>Mafra, Lisboa, Portugal</span>
+        </div>
+        <div class="info-item">
+          <label>Disponibilidade</label>
+          <span>Em projeto na Axians</span>
+        </div>
+        <div class="info-item">
+          <label>Telefone</label>
+          <span>+351 924 132 956</span>
+        </div>
+        <div class="info-item">
+          <label>Experiência</label>
+          <span>ServiceNow desde jun 2026 · 5+ anos em gestão de operações</span>
+        </div>
+        <div class="info-item">
+          <label>Modalidade</label>
+          <span>Presencial</span>
+        </div>
+        <div class="info-item">
+          <label>Email</label>
+          <span>goncalocsilva@gmail.com</span>
+        </div>
+        <div class="info-item">
+          <label>LinkedIn</label>
+          <span>in/gonçalo-silva-900937260</span>
+        </div>
+        <div class="info-item">
+          <label>Credly</label>
+          <span>credly.com/users/goncalo-silva</span>
+        </div>
       </div>
-      <div class="record-body">
-        <div class="field"><span class="k">Função</span><span class="v">Técnico de Informática</span></div>
-        <div class="field"><span class="k">Local</span><span class="v">Mafra, Lisboa · PT</span></div>
-        <div class="field"><span class="k">Certificação</span>
-          <span class="pill green"><span class="led"></span>ServiceNow CSA</span>
-        </div>
-        <div class="field"><span class="k">Upskill</span>
-          <span class="pill petrol"><span class="led"></span>Concluído · 2026</span>
-        </div>
-        <div class="field"><span class="k">Estado</span>
-          <span class="pill amber"><span class="led"></span>Disponível</span>
+
+      <div class="skills-block">
+        <h3>Competências Principais</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">ServiceNow</span>
+          <span class="skill-tag">ITSM</span>
+          <span class="skill-tag">CMDB</span>
+          <span class="skill-tag">Service Catalog</span>
+          <span class="skill-tag">Virtual Agent</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Microsoft Office</span>
+          <span class="skill-tag">QA</span>
+          <span class="skill-tag">LLM</span>
         </div>
       </div>
-    </aside>
-  </div>
-</div>
 
-<!-- PERFIL -->
-<section id="perfil">
-  <div class="wrap about">
-    <p class="eyebrow">Perfil</p>
-    <h2 class="h2">Da biologia aos sistemas</h2>
-    <p>
-      Licenciado em Biologia pela Faculdade de Ciências da Universidade de Lisboa, encontrei na informática
-      o trabalho que me motiva. Concluí o programa <strong>Upskill</strong> (2025–2026) com foco em desenvolvimento
-      de software e administração da plataforma ServiceNow, e sou <strong>Certified System Administrator (CSA)</strong> pela ServiceNow.
-    </p>
-    <p>
-      Os seis anos como <strong>Assistente de Gerente na McDonald's Portugal</strong> (Mar 2019 – Fev 2025)
-      deram-me algo que não se aprende num curso: coordenar equipas sob pressão, gerir operações críticas e
-      resolver imprevistos com rapidez. Essa combinação — rigor técnico e liderança operacional — é o que trago para a área de IT.
-    </p>
-  </div>
-</section>
+      <div class="skills-block">
+        <h3>Idiomas</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">Português — Nativo</span>
+          <span class="skill-tag">Inglês — C1 (oral B2)</span>
+          <span class="skill-tag">Espanhol — Iniciante</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- CERTIFICAÇÃO -->
-<section id="certificacao">
-  <div class="wrap">
-    <p class="eyebrow">Certificação</p>
-    <h2 class="h2">ServiceNow Certified System Administrator</h2>
-    <div class="cert-card reveal" style="margin-top:20px">
-      <div class="cert-badge">CSA</div>
+  <!-- ── Experience ────────────────────────────────────────────── -->
+  <div class="section-divider">
+    <div class="divider-line"></div>
+    <span class="divider-num">01 /</span>
+    <span class="divider-label">Experiência</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <section id="experiencia">
+    <div class="experience-item">
+      <div class="exp-meta">
+        <p class="exp-period">Jun 2026 — presente</p>
+        <p class="exp-company">Axians · Portugal<br />Cliente do setor industrial</p>
+      </div>
       <div>
-        <div class="cert-title">Certified System Administrator (CSA)</div>
-        <div class="cert-meta">ServiceNow · 2026 · Verificar credencial em <a href="https://www.credly.com/badges/8edec35b-c29c-4d6b-935c-fc5ee1559a5b/public_url" target="_blank" rel="noopener" style="color:var(--petrol)">credly.com</a></div>
+        <h3 class="exp-title">Consultor ServiceNow</h3>
+        <p class="exp-desc">Apoio a implementação e evolução da plataforma ServiceNow, em ITSM, CMDB, Service Catalog,
+          Workspace e Now Assist / Virtual Agent. Analiso, configuro, testo e valido funcionalidades, a traduzir
+          requisitos funcionais em soluções na plataforma. No Service Catalog trabalho em catalog items, lógica de
+          negócio e critérios de acesso, incluindo System Properties e Script Includes. Em CMDB e integrações,
+          analiso e documento dados de configuração, relações entre CIs e ligações a SCCM e Active Directory/LDAP, e
+          tenho o primeiro contacto com MID Server e integrações com Microsoft Entra ID e Microsoft Teams. Escrevo e
+          mantenho a documentação técnica e funcional, participo em workshops, demonstrações e sessões de validação
+          com o cliente, e contribuo para user stories e critérios de aceitação. Na pré-venda ajudo a preparar e rever
+          propostas e RFPs ServiceNow.</p>
       </div>
-      <span class="pill green"><span class="led"></span>Certificado</span>
     </div>
+
+    <div class="experience-item">
+      <div class="exp-meta">
+        <p class="exp-period">Mar 2019 — Fev 2025</p>
+        <p class="exp-company">McDonald's Portugal</p>
+      </div>
+      <div>
+        <h3 class="exp-title">Assistente de Gerente</h3>
+        <p class="exp-desc">Coordenei a operação diária do restaurante, com equipas até 20 pessoas por turno,
+          incluindo escalas, formação e acompanhamento do desempenho. Controlei stock e encomendas a fornecedores e
+          reduzi o desperdício com melhor previsão de consumo. Identifiquei falhas de processo recorrentes e pus em
+          prática planos de ação. Fui o ponto de contacto em incidentes, avarias de equipamentos e reclamações,
+          tomando decisões rápidas para manter o serviço estável.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects ───────────────────────────────────────────────── -->
+  <div class="section-divider">
+    <div class="divider-line"></div>
+    <span class="divider-num">02 /</span>
+    <span class="divider-label">Projetos</span>
+    <div class="divider-line"></div>
   </div>
-</section>
 
-<!-- EXPERIÊNCIA -->
-<section id="experiencia">
-  <div class="wrap">
-    <p class="eyebrow">Experiência</p>
-    <h2 class="h2">Percurso profissional</h2>
-    <div class="timeline" style="margin-top:24px">
+  <section id="projetos">
+    <div id="projects-loading">A carregar projetos...</div>
+    <div class="projects-grid" id="projects-grid" style="display:none;"></div>
+  </section>
 
-      <div class="tl-item cur reveal">
-        <div class="tl-top">
-          <span class="tl-role">Assistente de Gerente</span>
-          <span class="tl-org">— McDonald's Portugal</span>
-          <span class="tl-when">Mar 2019 — Fev 2025</span>
-        </div>
-        <div class="tl-desc">
-          <ul>
-            <li>Coordenação e motivação de equipas multidisciplinares com foco em resultados operacionais.</li>
-            <li>Supervisão de todas as áreas do restaurante, gestão de stock e controlo de inventário.</li>
-            <li>Formação de novos colaboradores, planeamento de escalas e gestão de fornecedores.</li>
-            <li>Cumprimento de normas de segurança alimentar e excelência no atendimento ao cliente.</li>
-          </ul>
+  <!-- ── Education ─────────────────────────────────────────────── -->
+  <div class="section-divider">
+    <div class="divider-line"></div>
+    <span class="divider-num">03 /</span>
+    <span class="divider-label">Educação e Certificações</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <section id="educacao">
+    <div class="edu-list">
+
+      <div class="edu-item">
+        <span class="edu-year">2026</span>
+        <div>
+          <p class="edu-degree">ServiceNow Certified System Administrator (CSA)</p>
+          <p class="edu-school">Credenciais verificáveis em <a href="https://www.credly.com/users/goncalo-silva" target="_blank" style="color:inherit">credly.com/users/goncalo-silva</a></p>
         </div>
       </div>
 
-      <div class="tl-item reveal">
-        <div class="tl-top">
-          <span class="tl-role">Reposição de Frescos</span>
-          <span class="tl-org">— Continente Bom Dia · Ericeira</span>
-          <span class="tl-when">Ago 2018 — Set 2018</span>
+      <div class="edu-item">
+        <span class="edu-year">2026</span>
+        <div>
+          <p class="edu-degree">Micro-certificações ServiceNow</p>
+          <p class="edu-school">Flow Designer · Integration Hub · Service Portal · Virtual Agent · Welcome to ServiceNow</p>
         </div>
-        <div class="tl-desc">
-          Reposição e organização de frutas, legumes e produtos frescos. Controlo de qualidade e exposição de produtos em loja.
+      </div>
+
+      <div class="edu-item">
+        <span class="edu-year">11/2025 — 05/2026</span>
+        <div>
+          <p class="edu-degree">Programa Upskill em Informática, com especialização em ServiceNow</p>
+          <p class="edu-school">Faculdade de Ciências da Universidade de Lisboa e Axians · Flow Designer, IntegrationHub, Service Portal, ATF, DevOps e CI/CD</p>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <span class="edu-year">2024 — 2025</span>
+        <div>
+          <p class="edu-degree">Licenciatura em Biologia <em style="font-size:0.85rem; color:var(--muted)">(conclusão)</em></p>
+          <p class="edu-school">Faculdade de Ciências · Universidade de Lisboa</p>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <span class="edu-year">2015 — 2019</span>
+        <div>
+          <p class="edu-degree">Licenciatura em Biologia</p>
+          <p class="edu-school">Faculdade de Ciências · Universidade de Lisboa</p>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <span class="edu-year">Certificação</span>
+        <div>
+          <p class="edu-degree">Quality Assurance (QA) — Técnicas e Metodologias</p>
+          <p class="edu-school">Formação Profissional</p>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <span class="edu-year">Formações</span>
+        <div>
+          <p class="edu-degree">Formações Internas McDonald's Portugal</p>
+          <p class="edu-school">Gestão de Equipas · Operações · Liderança · Segurança Alimentar</p>
         </div>
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FORMAÇÃO -->
-<section id="formacao">
-  <div class="wrap">
-    <p class="eyebrow">Formação</p>
-    <h2 class="h2">Percurso académico e técnico</h2>
-    <div class="timeline" style="margin-top:24px">
-
-      <div class="tl-item cur reveal">
-        <div class="tl-top">
-          <span class="tl-role">Programa Upskill — Full-Stack Developer Iniciante</span>
-          <span class="tl-when">2025 — 2026 · Concluído</span>
-        </div>
-        <div class="tl-desc">
-          Formação intensiva em desenvolvimento de software e administração ServiceNow. Projeto final de gestão de tickets desenvolvido em Python, HTML, CSS e JavaScript.
-          <a class="tl-link" href="https://github.com/Balance101-97/Tickets_Project_M8-M13" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-            Ver projeto final no GitHub
+  <!-- ── Contact ────────────────────────────────────────────────── -->
+  <section id="contacto">
+    <div class="contact-grid">
+      <div class="contact-intro">
+        <h2>Vamos <em>trabalhar</em> juntos?</h2>
+        <p>Estou a trabalhar como consultor ServiceNow, mas gosto sempre de falar sobre projetos, ideias e tecnologia.</p>
+        <div class="contact-links">
+          <a href="mailto:goncalocsilva@gmail.com" class="contact-link">
+            <div class="contact-link-icon">@</div>
+            <span>goncalocsilva@gmail.com</span>
+          </a>
+          <a href="tel:+351924132956" class="contact-link">
+            <div class="contact-link-icon">☎</div>
+            <span>+351 924 132 956</span>
+          </a>
+          <a href="https://www.linkedin.com/in/gon%C3%A7alo-silva-900937260" class="contact-link" target="_blank">
+            <div class="contact-link-icon">in</div>
+            <span>linkedin.com/in/gonçalo-silva-900937260</span>
+          </a>
+          <a href="https://www.credly.com/users/goncalo-silva" class="contact-link" target="_blank">
+            <div class="contact-link-icon">✓</div>
+            <span>credly.com/users/goncalo-silva</span>
           </a>
         </div>
       </div>
 
-      <div class="tl-item reveal">
-        <div class="tl-top">
-          <span class="tl-role">Quality Assurance (QA) — Techniques and Methodologies</span>
-          <span class="tl-when">2025</span>
+      <form class="contact-form" onsubmit="sendContact(event)">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" id="name" name="name" placeholder="O teu nome" required />
         </div>
-        <div class="tl-desc">Certificação em técnicas e metodologias de controlo de qualidade de software.</div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-top">
-          <span class="tl-role">Formações Internas McDonald's Portugal</span>
-          <span class="tl-when">2019 — 2025</span>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="email@exemplo.com" required />
         </div>
-        <div class="tl-desc">Gestão de Equipas · Operações · Liderança · Segurança Alimentar</div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-top">
-          <span class="tl-role">Licenciatura em Biologia</span>
-          <span class="tl-org">— Faculdade de Ciências · Universidade de Lisboa</span>
-          <span class="tl-when">2015 — 2019</span>
+        <div class="form-group">
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" rows="5" placeholder="Descreve o teu projecto ou oportunidade..."
+            required></textarea>
         </div>
-        <div class="tl-desc">Base científica em método analítico e rigor experimental, aplicados hoje à resolução de problemas técnicos.</div>
-      </div>
-
+        <div class="form-msg" id="form-msg"></div>
+        <button type="submit" class="btn-send" id="btn-send">Enviar Mensagem →</button>
+      </form>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- COMPETÊNCIAS -->
-<section id="competencias">
-  <div class="wrap">
-    <p class="eyebrow">Competências</p>
-    <h2 class="h2">O que trago</h2>
-    <div class="skill-grid" style="margin-top:24px">
-      <div class="skill-col">
-        <h3>Plataforma</h3>
-        <div class="tags">
-          <span class="tag">ServiceNow (ITSM)</span>
-          <span class="tag">Administração CSA</span>
-          <span class="tag">LLM / IA</span>
-        </div>
-      </div>
-      <div class="skill-col">
-        <h3>Desenvolvimento</h3>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">SQL / PostgreSQL</span>
-        </div>
-      </div>
-      <div class="skill-col">
-        <h3>Qualidade & Ferramentas</h3>
-        <div class="tags">
-          <span class="tag">QA — Techniques & Methodologies</span>
-          <span class="tag">Microsoft Office</span>
-          <span class="tag">Git / GitHub</span>
-        </div>
-      </div>
-      <div class="skill-col">
-        <h3>Profissionais</h3>
-        <div class="tags">
-          <span class="tag">Gestão de equipas</span>
-          <span class="tag">Operações</span>
-          <span class="tag">Liderança</span>
-        </div>
-      </div>
-      <div class="skill-col">
-        <h3>Idiomas</h3>
-        <div class="tags">
-          <span class="tag">Português — Nativo</span>
-          <span class="tag">Inglês — C1</span>
-          <span class="tag">Espanhol — Iniciante</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- ── Footer ────────────────────────────────────────────────── -->
+  <footer>
+    <span>© 2026 Gonçalo da Cruz Silva</span>
+    <span>Desenvolvido com FastAPI + HTML/CSS/JS</span>
+    <span>Mafra, Lisboa, Portugal</span>
+  </footer>
 
-<!-- CONTACTO -->
-<section id="contacto">
-  <div class="wrap">
-    <p class="eyebrow">Contacto</p>
-    <h2 class="h2">Vamos falar</h2>
-    <div class="contact-grid">
-      <a class="contact-card" href="mailto:goncalocsilva@gmail.com">
-        <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></span>
-        <span><span class="ck">Email</span><br /><span class="cv2">goncalocsilva@gmail.com</span></span>
-      </a>
-      <a class="contact-card" href="tel:+351924132956">
-        <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.19 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.1 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg></span>
-        <span><span class="ck">Telemóvel</span><br /><span class="cv2">+351 924 132 956</span></span>
-      </a>
-      <a class="contact-card" href="https://linkedin.com/in/gon%C3%A7alo-silva-900937260" target="_blank" rel="noopener">
-        <span class="ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></span>
-        <span><span class="ck">LinkedIn</span><br /><span class="cv2">linkedin.com/in/gonçalo-silva</span></span>
-      </a>
-      <a class="contact-card" href="https://github.com/Balance101-97" target="_blank" rel="noopener">
-        <span class="ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></span>
-        <span><span class="ck">GitHub</span><br /><span class="cv2">github.com/Balance101-97</span></span>
-      </a>
-    </div>
-  </div>
-</section>
+  <script>
+    // ── Navbar compacta ao fazer scroll ──────────────────────────
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
 
-<footer class="wrap">
-  <span>© <span id="yr"></span> Gonçalo da Cruz Silva</span>
-  <span>Mafra · Lisboa · Portugal</span>
-</footer>
+    // ── Intersection Observer para experiência ──────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
 
-<script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
-  },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
+    document.querySelectorAll('.experience-item').forEach(el => observer.observe(el));
+
+    // ── Carregar Projetos da API ──────────────────────────────────
+    async function loadProjects() {
+      try {
+        const res = await fetch('/api/projects');
+        const projects = await res.json();
+
+        const grid = document.getElementById('projects-grid');
+        const loading = document.getElementById('projects-loading');
+
+        grid.innerHTML = projects.map((p, i) => `
+          <div class="project-card" style="animation-delay: ${i * 0.1}s">
+            <p class="project-year">${p.year}</p>
+            <h3 class="project-title">${p.title}</h3>
+            <p class="project-desc">${p.description}</p>
+            <div class="project-techs">
+              ${p.technologies.map(t => `<span class="tech-badge">${t}</span>`).join('')}
+            </div>
+            <a href="${p.link}" class="project-link" target="_blank">Ver Projeto →</a>
+          </div>
+        `).join('');
+
+        loading.style.display = 'none';
+        grid.style.display = 'grid';
+      } catch (err) {
+        document.getElementById('projects-loading').textContent = 'Erro ao carregar projetos.';
+      }
+    }
+
+    // ── Formulário de Contacto ────────────────────────────────────
+    async function sendContact(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btn-send');
+      const msg = document.getElementById('form-msg');
+      btn.disabled = true;
+      btn.textContent = 'A enviar...';
+      msg.className = 'form-msg';
+      msg.style.display = 'none';
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+          })
+        });
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          msg.textContent = '✓ ' + data.message;
+          msg.className = 'form-msg success';
+          e.target.reset();
+        } else {
+          throw new Error(data.detail || 'Erro desconhecido');
+        }
+      } catch (err) {
+        msg.textContent = '✗ Erro ao enviar. Tenta novamente ou contacta diretamente por email.';
+        msg.className = 'form-msg error';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Enviar Mensagem →';
+      }
+    }
+
+    // ── Download CV ───────────────────────────────────────────────
+    async function downloadCV() {
+      try {
+        const res = await fetch('/api/download-cv');
+        if (!res.ok) {
+          alert('PDF não disponível. Coloca o teu CV em static/cv.pdf');
+          return;
+        }
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'CV_Goncalo_Silva.pdf';
+        a.click();
+        URL.revokeObjectURL(url);
+      } catch (err) {
+        alert('Erro ao fazer download do CV.');
+      }
+    }
+
+    // ── Init ──────────────────────────────────────────────────────
+    loadProjects();
+  </script>
 </body>
+
 </html>
